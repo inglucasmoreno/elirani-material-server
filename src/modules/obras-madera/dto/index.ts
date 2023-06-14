@@ -1,0 +1,1 @@
+export { ObrasMaderaDTO } from './obras-madera.dto';

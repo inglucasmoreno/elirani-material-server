@@ -1,0 +1,1 @@
+export { ObrasMaderaMotivosPases } from './obras-madera-motivos-pases.entity';

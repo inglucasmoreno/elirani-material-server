@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:15.1
+    container_name: database
+    restart: always
+    environment:
+      POSTGRES_DB: elirani
+      POSTGRES_USER: equinoccio
+      POSTGRES_PASSWORD: mariapia060608
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: equinocciotechnology@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: mariapia060608
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - 8080:8080
+    volumes:
+      - /var/lib/pgadmin
+    depends_on:
+      - db

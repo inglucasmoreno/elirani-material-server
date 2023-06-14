@@ -1,0 +1,1 @@
+export { TiposMuebles } from './tipos-muebles.entity';

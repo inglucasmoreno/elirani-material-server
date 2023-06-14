@@ -1,0 +1,1 @@
+export { Clientes } from './clientes.entity';

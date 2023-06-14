@@ -1,0 +1,1 @@
+export { TiposPlacasMaderaDTO } from './tipos-placas-madera.dto';

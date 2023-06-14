@@ -1,0 +1,40 @@
+
+### -> Orden por ID
+
+GET http://localhost:3000/ordenes-mantenimiento-madera/2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOlsiQ0xJRU5URVNfQUxMIiwiVVNVQVJJT1NfUkVBRCJdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NDYyMjE0NiwiZXhwIjoxNjg0NjY1MzQ2fQ.qa7IlXT9mMMB4gyVX-hd9p0g9uJi-c0iFrokijw-hB8
+Content-Type: application/json
+
+### -> Listar ordenes
+
+GET http://localhost:3000/ordenes-mantenimiento-madera
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzdWFyaW8iOiJhZG1pbiIsImFwZWxsaWRvIjoiQURNSU4iLCJub21icmUiOiJBRE1JTiIsInBlcm1pc29zIjpbXSwicm9sZSI6IkFETUlOX1JPTEUiLCJpYXQiOjE2ODY2NzU5MTksImV4cCI6MTY4NjcxOTExOX0.QK6oG_0sCCPt5X6eAmh0eMJZCnUW_DHdp1eZeBEkBKU
+Content-Type: application/json
+
+### -> Nueva orden
+
+POST http://localhost:3000/ordenes-mantenimiento-madera
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOlsiQ0xJRU5URVNfQUxMIiwiVVNVQVJJT1NfUkVBRCJdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NDYyMjE0NiwiZXhwIjoxNjg0NjY1MzQ2fQ.qa7IlXT9mMMB4gyVX-hd9p0g9uJi-c0iFrokijw-hB8
+Content-Type: application/json
+
+{
+    "obra_madera": 1,
+    "creatorUser": 2,
+    "updatorUser": 2
+}
+
+### -> Actualizar orden
+
+PATCH http://localhost:3000/ordenes-mantenimiento-madera/1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOlsiQ0xJRU5URVNfQUxMIiwiVVNVQVJJT1NfUkVBRCJdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NDYyMjE0NiwiZXhwIjoxNjg0NjY1MzQ2fQ.qa7IlXT9mMMB4gyVX-hd9p0g9uJi-c0iFrokijw-hB8
+Content-Type: application/json
+
+{
+    "observaciones": "Esta es una observacion",
+    "updatorUser": 2
+}
+### -> Actualizar orden
+
+DELETE http://localhost:3000/ordenes-mantenimiento-madera/1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOlsiQ0xJRU5URVNfQUxMIiwiVVNVQVJJT1NfUkVBRCJdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NDYyMjE0NiwiZXhwIjoxNjg0NjY1MzQ2fQ.qa7IlXT9mMMB4gyVX-hd9p0g9uJi-c0iFrokijw-hB8
+Content-Type: application/json

@@ -1,0 +1,1 @@
+export { OrdenesMantenimientoMaderaDTO } from './ordenes-mantenimiento-madera.dto';

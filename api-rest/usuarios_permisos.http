@@ -1,0 +1,44 @@
+
+### -> Permiso por ID
+
+GET http://localhost:3000/usuarios-permisos/16
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOltdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NTQ3NzM1NSwiZXhwIjoxNjg1NTIwNTU1fQ.CjqEx7lozBwv3wIniUFPKssv4erdlOEB4FCUfrw0gDU
+Content-Type: application/json
+
+### -> Listado de permisos
+
+GET http://localhost:3000/usuarios-permisos?usuario=2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOltdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NTQ3NzM1NSwiZXhwIjoxNjg1NTIwNTU1fQ.CjqEx7lozBwv3wIniUFPKssv4erdlOEB4FCUfrw0gDU
+Content-Type: application/json
+
+
+### -> Nuevo permiso
+
+POST http://localhost:3000/usuarios-permisos
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOltdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NTQ3NzM1NSwiZXhwIjoxNjg1NTIwNTU1fQ.CjqEx7lozBwv3wIniUFPKssv4erdlOEB4FCUfrw0gDU
+Content-Type: application/json
+
+{
+    "usuario": 2,
+    "alcance": "OBRAS_MADERA",
+    "permiso": "ALL",
+    "creatorUser": 2,
+    "updatorUser": 2
+}
+
+### -> Actualizar permiso
+
+PATCH http://localhost:3000/usuarios-permisos/1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOltdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NTQ3NzM1NSwiZXhwIjoxNjg1NTIwNTU1fQ.CjqEx7lozBwv3wIniUFPKssv4erdlOEB4FCUfrw0gDU
+Content-Type: application/json
+
+{
+    "permiso": "ALL_CLIENTES",
+    "updatorUser": 2
+}
+
+### -> Eliminar permiso
+
+DELETE http://localhost:3000/usuarios-permisos/16
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicGVybWlzb3MiOltdLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTY4NTQ3NzM1NSwiZXhwIjoxNjg1NTIwNTU1fQ.CjqEx7lozBwv3wIniUFPKssv4erdlOEB4FCUfrw0gDU
+Content-Type: application/json

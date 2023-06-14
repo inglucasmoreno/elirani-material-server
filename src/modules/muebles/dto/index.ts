@@ -1,0 +1,1 @@
+export { MueblesDTO } from './muebles.dto';

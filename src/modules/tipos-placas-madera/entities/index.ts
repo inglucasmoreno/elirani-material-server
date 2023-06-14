@@ -1,0 +1,1 @@
+export { TiposPlacasMadera } from './tipos-placas-madera.entity';

@@ -1,0 +1,1 @@
+export { TiposMueblesDTO } from './tipos-muebles.dto';

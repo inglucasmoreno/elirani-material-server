@@ -1,0 +1,40 @@
+
+### -> Pase por ID
+
+GET http://localhost:3000/obras-madera-pases/2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicm9sZSI6IkFETUlOX1JPTEUiLCJpYXQiOjE2ODE0MjYzNzgsImV4cCI6MTY4MTQ2OTU3OH0.mali1ZUC9-dPevQgpeQ4e6zPuhxjRccUDyNb2JSxtW8
+Content-Type: application/json
+
+### -> Listar pases
+
+GET http://localhost:3000/obras-madera-pases
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicm9sZSI6IkFETUlOX1JPTEUiLCJpYXQiOjE2ODE0MjYzNzgsImV4cCI6MTY4MTQ2OTU3OH0.mali1ZUC9-dPevQgpeQ4e6zPuhxjRccUDyNb2JSxtW8
+Content-Type: application/json
+
+### -> Nuevo pase
+
+POST http://localhost:3000/obras-madera-pases
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicm9sZSI6IkFETUlOX1JPTEUiLCJpYXQiOjE2ODE0MjYzNzgsImV4cCI6MTY4MTQ2OTU3OH0.mali1ZUC9-dPevQgpeQ4e6zPuhxjRccUDyNb2JSxtW8
+Content-Type: application/json
+
+{
+    "obra_madera": 1,
+    "motivo": 1,
+    "tipo": "Adelante",
+    "observacion": "",
+    "etapa_anterior": "Produccion",
+    "etapa_actual": "Colocacion",
+    "creatorUser": 2,
+    "updatorUser": 2
+}
+
+### -> Actualizar pase
+
+PATCH http://localhost:3000/obras-madera-pases/2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzdWFyaW8iOiJsbW9yZW5vIiwiYXBlbGxpZG8iOiJNT1JFTk8iLCJub21icmUiOiJMVUNBUyBPTUFSIiwicm9sZSI6IkFETUlOX1JPTEUiLCJpYXQiOjE2ODE0MjYzNzgsImV4cCI6MTY4MTQ2OTU3OH0.mali1ZUC9-dPevQgpeQ4e6zPuhxjRccUDyNb2JSxtW8
+Content-Type: application/json
+
+{
+    "motivo": 1,
+    "updatorUser": 2
+}

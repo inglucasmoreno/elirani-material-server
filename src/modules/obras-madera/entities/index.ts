@@ -1,0 +1,1 @@
+export { ObrasMadera } from './obras-madera.entity';

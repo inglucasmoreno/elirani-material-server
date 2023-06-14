@@ -1,0 +1,1 @@
+export { ClientesDTO } from './clientes.dto';
