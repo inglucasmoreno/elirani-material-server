@@ -102,19 +102,21 @@ export class MueblesService {
 
     await this.obrasMaderaRepository.update({ id: obra_madera }, { precio: precio_obra });
 
-    // Se agregan las placas al mueble
-    for (const placa of placas) {
-      
-      const data = {
-        mueble: muebleDB.id,
-        cantidad: placa.cantidad,
-        tipo_placa_madera: placa.tipo_placa_madera, 
-        creatorUser: mueblesDTO.creatorUser,
-        updatorUser: mueblesDTO.updatorUser,
-      } 
-
-      await await this.mueblesPlacasRepository.save(data);
-
+    if(placas){
+      // Se agregan las placas al mueble
+      for (const placa of placas) {
+        
+        const data = {
+          mueble: muebleDB.id,
+          cantidad: placa.cantidad,
+          tipo_placa_madera: placa.tipo_placa_madera, 
+          creatorUser: mueblesDTO.creatorUser,
+          updatorUser: mueblesDTO.updatorUser,
+        } 
+  
+        await await this.mueblesPlacasRepository.save(data);
+  
+      }
     }
 
     return {
@@ -129,8 +131,6 @@ export class MueblesService {
 
     const { tipo_mueble, precio, muebleConPlacas, observaciones, updatorUser } = mueblesUpdateDTO;
 
-    mueblesUpdateDTO.observaciones = mueblesUpdateDTO.observaciones.toUpperCase().trim();
-
     const muebleDB = await this.mueblesRepository.findOne({ 
       relations: {
         obra_madera: true
@@ -144,7 +144,7 @@ export class MueblesService {
     const data = {
       tipo_mueble,
       precio,
-      observaciones,
+      observaciones: observaciones.trim().toUpperCase(),
       updatorUser
     }
 

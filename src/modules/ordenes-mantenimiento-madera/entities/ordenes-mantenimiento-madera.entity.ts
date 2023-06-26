@@ -24,6 +24,7 @@ export class OrdenesMantenimientoMadera extends BaseEntity implements IOrdenesMa
 
   @Column({ 
     nullable: true,
+    type: 'float'
   })
   precio: number;
 

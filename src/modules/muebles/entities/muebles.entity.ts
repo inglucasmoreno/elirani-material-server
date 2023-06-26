@@ -13,7 +13,10 @@ export class Muebles extends BaseEntity implements IMuebles {
   @Column({ default: '' })
   observaciones: string;
 
-  @Column({ nullable: false })
+  @Column({ 
+    nullable: false,
+    type: 'float'
+  })
   precio: number;
 
   @Column({ default: 'Pendiente' })

@@ -40,7 +40,8 @@ export class ObrasMadera extends BaseEntity implements IObrasMadera {
   estado: string;
 
   @Column({
-    default: 0
+    default: 0,
+    type: 'float'
   })
   precio: number;
 
@@ -61,15 +62,15 @@ export class ObrasMadera extends BaseEntity implements IObrasMadera {
   cliente: Clientes;
 
   // Obra (One) -> Pases (Many)
-  @OneToMany(() => ObrasMaderaPases, pases => pases.obra_madera)
+  @OneToMany(() => ObrasMaderaPases, pases => pases.obra_madera, { onDelete: "CASCADE" })
   pases: ObrasMaderaPases[];
 
   // Obra (One) -> Muebles (Many)
-  @OneToMany(() => Muebles, mueble => mueble.obra_madera)
+  @OneToMany(() => Muebles, mueble => mueble.obra_madera, { onDelete: "CASCADE" })
   muebles: Muebles[];
 
   // Obra (One) -> Orden de mantenimiento (Many)
-  @OneToMany(() => OrdenesMantenimientoMadera, ordenes_mantenimiento => ordenes_mantenimiento.obra_madera)
+  @OneToMany(() => OrdenesMantenimientoMadera, ordenes_mantenimiento => ordenes_mantenimiento.obra_madera, { onDelete: "CASCADE" })
   ordenes_mantenimiento: OrdenesMantenimientoMadera[];
 
   // Obras (Many) -> Usuario creador (One)

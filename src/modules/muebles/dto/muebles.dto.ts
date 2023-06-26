@@ -1,15 +1,11 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsArray, IsBoolean, IsNumber, IsOptional, IsString } from "class-validator";
+import { IsBoolean, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class MueblesDTO {
 
   @ApiProperty()
   @IsNumber()
   readonly tipo_mueble: number;
-
-  @ApiProperty()
-  @IsArray()
-  readonly placas: any[];
 
   @ApiProperty()
   @IsNumber()

@@ -20,7 +20,9 @@ export class OrdenesMantenimientoMaderaService {
 
     const Orden = await this.ordenesRepository.findOne({
       relations: {
-        obra_madera: true,
+        obra_madera: {
+          cliente: true
+        },
         creatorUser: true,
         updatorUser: true
       },
@@ -39,8 +41,11 @@ export class OrdenesMantenimientoMaderaService {
     activo = '',
     parametro = '',
     desde = 0,
-    cantidadItems = 100000
+    cantidadItems = 100000,
+    obra_madera = ''
   }: any): Promise<any> {
+
+    console.log(obra_madera);
 
     // Ordenando datos
     let order = {};
@@ -48,21 +53,28 @@ export class OrdenesMantenimientoMaderaService {
 
     // Filtrando datos
     let where = [];
-    let campos = ['observaciones'];
 
-    campos.forEach(campo => {
-      const filtro = {};
-      filtro[campo] = Like('%' + parametro.toUpperCase() + '%');
-      if (activo.trim() !== '') filtro['activo'] = activo === 'true' ? true : false;
-      where.push(filtro)
-    })
+    if(obra_madera || obra_madera !== ''){
+      where.push({ obra_madera: { id: obra_madera } });
+    } 
+
+    // let campos = ['observaciones'];
+
+    // campos.forEach(campo => {
+    //   const filtro = {};
+    //   filtro[campo] = Like('%' + parametro.toUpperCase() + '%');
+    //   if (activo.trim() !== '') filtro['activo'] = activo === 'true' ? true : false;
+    //   where.push(filtro)
+    // })
 
     const totalItems = await this.ordenesRepository.count({ where });
 
     const ordenes = await this.ordenesRepository
       .find({
         relations: {
-          obra_madera: true,
+          obra_madera: {
+            cliente: true
+          },
           creatorUser: true,
           updatorUser: true
         },
@@ -80,12 +92,12 @@ export class OrdenesMantenimientoMaderaService {
   }
 
   // Crear orden de mantenimiento
-  async insert(ordenDTO: any): Promise<OrdenesMantenimientoMadera[]> {
+  async insert(ordenDTO: any): Promise<OrdenesMantenimientoMadera> {
 
     // Uppercase y Lowercase
     ordenDTO.observaciones = ordenDTO.observaciones?.toLocaleUpperCase().trim();
-
-    return this.ordenesRepository.save(ordenDTO);
+    const ordenDB = await this.ordenesRepository.save(ordenDTO);
+    return this.getId(ordenDB.id);
 
   }
 

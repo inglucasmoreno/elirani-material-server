@@ -49,9 +49,10 @@ export class UsuariosService {
     let order = {};
     order[columna] = direccion;
 
-    let parametros: any = { order };
-
-    const usuarios = await this.usuariosRepository.find(parametros);
+    const usuarios = await this.usuariosRepository.find({
+      relations:{ permisos: true },
+      order
+    });
 
     return usuarios;
 
@@ -102,7 +103,7 @@ export class UsuariosService {
 
   // Actualizar usuario
   async actualizarUsuario(id: any, usuariosUpdateDTO: any): Promise<any> {
-
+    
     const {
       usuario,
       apellido,
@@ -110,6 +111,7 @@ export class UsuariosService {
       dni,
       email,
       role,
+      password,
       activo,
       permisos = []
     } = usuariosUpdateDTO;
@@ -121,6 +123,7 @@ export class UsuariosService {
       dni,
       email,
       role,
+      password,
       activo,
     }
 
@@ -130,7 +133,6 @@ export class UsuariosService {
     // Actualizacion de permisos
     await Promise.all(
       permisos.map(async ({ alcance, permiso, creatorUser, updatorUser }) => {
-
 
         const permisoDB = await this.permisosRepository.findOne({ where: [{ usuario: { id }, alcance }] });
 
