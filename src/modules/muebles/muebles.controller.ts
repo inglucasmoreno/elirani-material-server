@@ -42,6 +42,8 @@ export class MueblesController {
   @Post('/')
   async crearMueble(@Res() res, @Body() mueblesDTO: MueblesDTO): Promise<Muebles> {
 
+    console.log(mueblesDTO);
+
     const { mueble, precio_obra } = await this.mueblesService.insert(mueblesDTO);
 
     return res.status(HttpStatus.CREATED).json({
