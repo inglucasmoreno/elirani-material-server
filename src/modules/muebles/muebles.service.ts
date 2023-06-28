@@ -102,8 +102,6 @@ export class MueblesService {
 
     await this.obrasMaderaRepository.update({ id: obra_madera }, { precio: precio_obra });
 
-    console.log(placas);
-
     if(placas){
       // Se agregan las placas al mueble
       for (const placa of placas) {

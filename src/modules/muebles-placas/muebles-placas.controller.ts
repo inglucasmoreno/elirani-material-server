@@ -43,6 +43,8 @@ export class MueblesPlacasController {
   @Post('/')
   async crearRelacion(@Res() res, @Body() relacionesDTO: MueblesPlacasDTO): Promise<MueblesPlacas> {
 
+    console.log(relacionesDTO);
+
     const relacion = await this.relacionesService.insert(relacionesDTO);
 
     return res.status(HttpStatus.CREATED).json({
